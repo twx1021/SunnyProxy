@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="2dp"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/save"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:textStyle="bold"
+            android:visibility="gone">
+
+            <CheckBox
+                android:id="@+id/ipv4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ipv4"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/ipv6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ipv6"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/global"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="@string/global"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/xitong"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="指定APP不显示系统APP"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/apps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/apps"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/udp_in_tcp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/udp_in_tcp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+
+
+
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+
+            android:singleLine="true"
+            android:text="@string/dns_ipv4"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/dns_ipv4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="0123456789."
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:singleLine="true"
+            android:text="@string/dns_ipv6"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/dns_ipv6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="0123456789abcdef:"
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </LinearLayout>
+
+
+    <EditText
+            android:id="@+id/edit_ip"
+            android:layout_width="240dp"
+            android:layout_height="42dp"
+            android:ems="10"
+            android:inputType="numberDecimal|text"
+            android:text="192.168.31.154"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.789"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.281"/>
+    <TextView
+            android:id="@+id/textView"
+            android:layout_width="88dp"
+            android:layout_height="38dp"
+            android:gravity="center_vertical"
+            android:text="服务器地址："
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.145"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.279"/>
+    <TextView
+            android:id="@+id/textView2"
+            android:layout_width="88dp"
+            android:layout_height="38dp"
+            android:gravity="center_vertical"
+            android:text="服务器用户："
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.142"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.443"/>
+    <EditText
+            android:id="@+id/edit_user"
+            android:layout_width="240dp"
+            android:layout_height="42dp"
+            android:ems="10"
+            android:hint="请输入用户名(可以留空)"
+            android:inputType="text"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.783"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.445"/>
+    <TextView
+            android:id="@+id/textView20"
+            android:layout_width="88dp"
+            android:layout_height="38dp"
+            android:gravity="center_vertical"
+            android:text="服务器端口："
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.145"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.365"/>
+    <EditText
+            android:id="@+id/edit_pwd"
+            android:layout_width="240dp"
+            android:layout_height="42dp"
+            android:ems="10"
+            android:hint="请输入密码　(可以留空)"
+            android:inputType="text"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.783"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.529"/>
+    <EditText
+            android:id="@+id/edit_port"
+            android:layout_width="240dp"
+            android:layout_height="42dp"
+            android:ems="10"
+            android:inputType="number"
+            android:text="2024"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.789"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.367"/>
+    <TextView
+            android:id="@+id/textView21"
+            android:layout_width="88dp"
+            android:layout_height="38dp"
+            android:gravity="center_vertical"
+            android:text="服务器密码："
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.145"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.057"/>
+
+    <TextView
+            android:id="@+id/bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SunnyNet代理工具"
+            android:textSize="80px"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.106"/>
+    <Button
+            android:id="@+id/control"
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:text="启动"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.88"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.691"/>
+    <Button
+            android:id="@+id/zhenshu"
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:text="安装证书"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.88"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.776"/>
+    <Button
+            android:id="@+id/guanyu"
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:text="用户协议"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.88"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.863"/>
+    <ImageView
+            android:layout_width="216dp"
+            android:layout_height="162dp" app:srcCompat="@drawable/tt"
+            android:id="@+id/imageView"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.082"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.827"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
