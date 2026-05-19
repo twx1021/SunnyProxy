@@ -23,7 +23,7 @@ Android 平台上的 **SOCKS5 代理 VPN 客户端**。通过系统 `VpnService`
 - **VPN 隧道**：基于 Android `VpnService`，将 TCP/UDP 流量导入隧道
 - **全局 / 分应用代理**：可选全局代理，或仅代理指定应用列表
 - **tun2socks 内核**：通过 Go JNI（`libgojni.so` 等）与原生组件完成 TUN → SOCKS 转发
-- **Root 证书安装**（可选）：在已 Root 设备上，支持通过 Magisk / KernelSU / APatch 等环境安装系统/用户 CA，便于 HTTPS 调试（需用户自行承担合规责任）
+- **Root 证书安装(SunnyNet证书)**（可选）：在已 Root 设备上，支持通过 Magisk / KernelSU / APatch 等环境安装系统/用户 CA，便于 HTTPS 调试（需用户自行承担合规责任）
 - **开机自启**：若上次处于连接状态，可在开机后尝试恢复 VPN（见 `ServiceReceiver`）
 
 ---
