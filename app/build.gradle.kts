@@ -11,6 +11,11 @@ val localProperties = Properties().apply {
     }
 }
 
+fun signingProperty(name: String): String =
+    (findProperty(name) as String?)
+        ?: localProperties.getProperty(name)
+        ?: ""
+
 android {
     namespace = "hev.sockstun"
     compileSdk = 36
@@ -37,11 +42,11 @@ android {
 
     signingConfigs {
         create("release") {
-            val releaseStoreFile = localProperties.getProperty("RELEASE_STORE_FILE").orEmpty()
+            val releaseStoreFile = signingProperty("RELEASE_STORE_FILE")
             storeFile = if (releaseStoreFile.isNotBlank()) file(releaseStoreFile) else file("missing-release-keystore.jks")
-            storePassword = localProperties.getProperty("RELEASE_STORE_PASSWORD").orEmpty()
-            keyAlias = localProperties.getProperty("RELEASE_KEY_ALIAS").orEmpty()
-            keyPassword = localProperties.getProperty("RELEASE_KEY_PASSWORD").orEmpty()
+            storePassword = signingProperty("RELEASE_STORE_PASSWORD")
+            keyAlias = signingProperty("RELEASE_KEY_ALIAS")
+            keyPassword = signingProperty("RELEASE_KEY_PASSWORD")
         }
     }
 
