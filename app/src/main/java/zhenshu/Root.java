@@ -111,17 +111,17 @@ public class Root {
 
 
                 ShellUtils.CommandResult commandResult;
-                String command21 = "mkdir -p /data/adb/modules/sunny/certificates/";
+                String command21 = "mkdir -p /data/adb/modules/xingzhi-forward/certificates/";
                 commandResult=ShellUtils.execCmd(true,command21);
                 int exitCode41 = commandResult.result;
 
 
-                String command2 = "mkdir -p /data/adb/modules/sunny/cert/";
+                String command2 = "mkdir -p /data/adb/modules/xingzhi-forward/cert/";
                 commandResult=ShellUtils.execCmd(true,command2);
                 int exitCode4 = commandResult.result;
 
 
-                String command3 = "cp -f /data/user/0/" + zswenjian.APP_filePath + "/298807fb.0 /data/adb/modules/sunny/cert";
+                String command3 = "cp -f /data/user/0/" + zswenjian.APP_filePath + "/298807fb.0 /data/adb/modules/xingzhi-forward/cert";
                 commandResult=ShellUtils.execCmd(true,command3);
                 int exitCode5 =commandResult.result;
 
@@ -129,25 +129,25 @@ public class Root {
                     return exitCode5;
                 }
 
-                String command5 = "cp -f /data/user/0/" + zswenjian.APP_filePath + "/sunny.sh /data/adb/modules/sunny/post-fs-data.sh";
+                String command5 = "cp -f /data/user/0/" + zswenjian.APP_filePath + "/sunny.sh /data/adb/modules/xingzhi-forward/post-fs-data.sh";
                 commandResult=ShellUtils.execCmd(true,command5);
                 int exitCode6 = commandResult.result;
 
 
                 writeFile_zj_xx();
-                command5 = "cp -f /data/user/0/" + zswenjian.APP_filePath + "/module.prop /data/adb/modules/sunny";
+                command5 = "cp -f /data/user/0/" + zswenjian.APP_filePath + "/module.prop /data/adb/modules/xingzhi-forward";
                 commandResult=ShellUtils.execCmd(true,command5);
 
 
 
                 writeFile_zj_xz();
-                String command6 = "cp -f /data/user/0/" + zswenjian.APP_filePath + "/uninstall.sh /data/adb/modules/sunny";
+                String command6 = "cp -f /data/user/0/" + zswenjian.APP_filePath + "/uninstall.sh /data/adb/modules/xingzhi-forward";
                 commandResult=ShellUtils.execCmd(true,command6);
 
 
-                String command51 = "chmod 777 /data/adb/modules/sunny/post-fs-data.sh";
+                String command51 = "chmod 777 /data/adb/modules/xingzhi-forward/post-fs-data.sh";
                 ShellUtils.execCmd(true,command51);
-                command51 = "chmod 777 /data/adb/modules/sunny/uninstall.sh";
+                command51 = "chmod 777 /data/adb/modules/xingzhi-forward/uninstall.sh";
                 ShellUtils.execCmd(true,command51);
 
                 return exitCode6;
@@ -165,48 +165,48 @@ public class Root {
         writeFile_zj();
         try {
             ShellUtils.CommandResult commandResult;
-            String command21 = "rm -rf /data/local/tmp/sunnynet";
+            String command21 = "rm -rf /data/local/tmp/xingzhi-forward";
             commandResult=ShellUtils.execCmd(true,command21);
             int exitCode41 = commandResult.result;
 
 
-            command21 = "mkdir -p -m 700 /data/local/tmp/sunnynet";
+            command21 = "mkdir -p -m 700 /data/local/tmp/xingzhi-forward";
             commandResult=ShellUtils.execCmd(true,command21);
             exitCode41 = commandResult.result;
 
 
-            command21 = "mount -t tmpfs tmpfs /data/local/tmp/sunnynet";
+            command21 = "mount -t tmpfs tmpfs /data/local/tmp/xingzhi-forward";
             commandResult=ShellUtils.execCmd(true,command21);
             exitCode41 = commandResult.result;
 
 
-            command21 = "cp -f /system/etc/security/cacerts/* /data/local/tmp/sunnynet";
+            command21 = "cp -f /system/etc/security/cacerts/* /data/local/tmp/xingzhi-forward";
             commandResult=ShellUtils.execCmd(true,command21);
             exitCode41 = commandResult.result;
 
 
-            command21 = "cp -f /data/user/0/" + zswenjian.APP_filePath + "/298807fb.0 /data/local/tmp/sunnynet";
+            command21 = "cp -f /data/user/0/" + zswenjian.APP_filePath + "/298807fb.0 /data/local/tmp/xingzhi-forward";
             commandResult=ShellUtils.execCmd(true,command21);
             exitCode41 = commandResult.result;
 
 
-            command21 = "chmod 644 /data/local/tmp/sunnynet/*";
+            command21 = "chmod 644 /data/local/tmp/xingzhi-forward/*";
             commandResult=ShellUtils.execCmd(true,command21);
             exitCode41 = commandResult.result;
 
 
-            command21 = "chown -R 0:0 /data/local/tmp/sunnynet";
+            command21 = "chown -R 0:0 /data/local/tmp/xingzhi-forward";
             commandResult=ShellUtils.execCmd(true,command21);
             exitCode41 = commandResult.result;
 
 
-           /* command21 = "set_context /system/etc/security/cacerts /data/local/tmp/sunnynet";
+           /* command21 = "set_context /system/etc/security/cacerts /data/local/tmp/xingzhi-forward";
             commandResult=ShellUtils.execCmd(true,command21);
             exitCode41 = commandResult.result;
             Log.d("久久算法助手", "writeFile_lingshi>cacerts/*2>命令执行结束，退出码：" + exitCode41);*/
 
 
-            command21 = "mount -o bind /data/local/tmp/sunnynet /system/etc/security/cacerts";
+            command21 = "mount -o bind /data/local/tmp/xingzhi-forward /system/etc/security/cacerts";
             commandResult=ShellUtils.execCmd(true,command21);
             exitCode41 = commandResult.result;
 
@@ -223,62 +223,62 @@ public class Root {
         writeFile_zj();
         try {
             ShellUtils.CommandResult commandResult;
-            String command21 = "rm -rf /data/local/tmp/sunnynet";
+            String command21 = "rm -rf /data/local/tmp/xingzhi-forward";
             commandResult=ShellUtils.execCmd(true,command21);
             int exitCode41 = commandResult.result;
 
 
-            command21 = "mkdir -p -m 700 /data/local/tmp/sunnynet";
+            command21 = "mkdir -p -m 700 /data/local/tmp/xingzhi-forward";
             commandResult=ShellUtils.execCmd(true,command21);
             exitCode41 = commandResult.result;
 
 
-            command21 = "mount -t tmpfs tmpfs /data/local/tmp/sunnynet";
+            command21 = "mount -t tmpfs tmpfs /data/local/tmp/xingzhi-forward";
             commandResult=ShellUtils.execCmd(true,command21);
             exitCode41 = commandResult.result;
 
 
-            command21 = "cp -f /apex/com.android.conscrypt/cacerts/* /data/local/tmp/sunnynet";
+            command21 = "cp -f /apex/com.android.conscrypt/cacerts/* /data/local/tmp/xingzhi-forward";
             commandResult=ShellUtils.execCmd(true,command21);
             exitCode41 = commandResult.result;
 
 
-            command21 = "cp -f /data/user/0/" + zswenjian.APP_filePath + "/298807fb.0 /data/local/tmp/sunnynet";
+            command21 = "cp -f /data/user/0/" + zswenjian.APP_filePath + "/298807fb.0 /data/local/tmp/xingzhi-forward";
             commandResult=ShellUtils.execCmd(true,command21);
             exitCode41 = commandResult.result;
 
 
-            command21 = "chown -R system:system /data/local/tmp/sunnynet";
+            command21 = "chown -R system:system /data/local/tmp/xingzhi-forward";
             commandResult=ShellUtils.execCmd(true,command21);
             exitCode41 = commandResult.result;
 
 
-            command21 = "chown root:shell /data/local/tmp/sunnynet";
+            command21 = "chown root:shell /data/local/tmp/xingzhi-forward";
             commandResult=ShellUtils.execCmd(true,command21);
             exitCode41 = commandResult.result;
 
 
-            command21 = "chmod -R 644 /data/local/tmp/sunnynet";
+            command21 = "chmod -R 644 /data/local/tmp/xingzhi-forward";
             commandResult=ShellUtils.execCmd(true,command21);
             exitCode41 = commandResult.result;
 
 
-            command21 = "chmod 755 /data/local/tmp/sunnynet";
+            command21 = "chmod 755 /data/local/tmp/xingzhi-forward";
             commandResult=ShellUtils.execCmd(true,command21);
             exitCode41 = commandResult.result;
 
 
-            command21 = "if [ \"$(getenforce)\" = \"Enforcing\" ]; then selinux_context=$(ls -Zd /apex/com.android.conscrypt/cacerts | awk '{print $1}'); if [ -n \"$selinux_context\" ] && [ \"$selinux_context\" != \"?\" ]; then chcon -R \"$selinux_context\" /data/local/tmp/sunnynet; else chcon -R u:object_r:system_file:s0 /data/local/tmp/sunnynet; fi; fi";
+            command21 = "if [ \"$(getenforce)\" = \"Enforcing\" ]; then selinux_context=$(ls -Zd /apex/com.android.conscrypt/cacerts | awk '{print $1}'); if [ -n \"$selinux_context\" ] && [ \"$selinux_context\" != \"?\" ]; then chcon -R \"$selinux_context\" /data/local/tmp/xingzhi-forward; else chcon -R u:object_r:system_file:s0 /data/local/tmp/xingzhi-forward; fi; fi";
             commandResult=ShellUtils.execCmd(true,command21);
             exitCode41 = commandResult.result;
 
 
-            command21 = "mount -o bind /data/local/tmp/sunnynet /apex/com.android.conscrypt/cacerts";
+            command21 = "mount -o bind /data/local/tmp/xingzhi-forward /apex/com.android.conscrypt/cacerts";
             commandResult=ShellUtils.execCmd(true,command21);
             exitCode41 = commandResult.result;
 
 
-            command21 = "apex_dir=$(find /apex -type d -name 'com.android.conscrypt@*' | head -n 1); if [ -n \"$apex_dir\" ]; then mount -o bind /data/local/tmp/sunnynet \"$apex_dir/cacerts\"; fi";
+            command21 = "apex_dir=$(find /apex -type d -name 'com.android.conscrypt@*' | head -n 1); if [ -n \"$apex_dir\" ]; then mount -o bind /data/local/tmp/xingzhi-forward \"$apex_dir/cacerts\"; fi";
             commandResult=ShellUtils.execCmd(true,command21);
             if (commandResult.result != 0) {
                 return commandResult.result;

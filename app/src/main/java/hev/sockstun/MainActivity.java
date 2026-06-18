@@ -7,12 +7,9 @@ import android.content.Intent;
 import android.net.VpnService;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.*;
 
 import androidx.activity.EdgeToEdge;
@@ -60,8 +57,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView20;
     private TextView textView21;
 
-    private Button guanyu;
-
     private static String[] PERMISSIONS_STORAGE = {"android.permission.READ_EXTERNAL_STORAGE", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.MANAGE_EXTERNAL_STORAGE"};
     private static final int REQUEST_CODE = 1;
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
@@ -84,11 +79,6 @@ public class MainActivity extends AppCompatActivity {
     // androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, androidx.core.app.ComponentActivity, android.app.Activity
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // 获取屏幕分辨率
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int screenWidth = displayMetrics.widthPixels;
-        int dpi = (int) (displayMetrics.xdpi + displayMetrics.ydpi) / 2;
 
         EdgeToEdge.enable(this);
         setContentView(R.layout.fragment_dashboard);
@@ -100,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        this.guanyu = (Button) findViewById(R.id.guanyu);
         this.textView21 = (TextView) findViewById(R.id.textView21);
         this.textView20 = (TextView) findViewById(R.id.textView2);
 
@@ -128,47 +117,8 @@ public class MainActivity extends AppCompatActivity {
         this.button_save.setOnClickListener(this::OnClickListener);
         this.button_control.setOnClickListener(this::OnClickListener);
         this.zhenshu.setOnClickListener(this::OnClickListener);
-        this.guanyu.setOnClickListener(this::OnClickListener);
 
         writeFile_sh(this);
-
-        if (screenWidth < 1000) {
-            TextView bt = (TextView) findViewById(R.id.bt);
-            bt.setTextSize(TypedValue.COMPLEX_UNIT_PX, 60);
-            ViewGroup.LayoutParams params = this.edittext_socks_addr.getLayoutParams();
-            params.width = dpToPx(220);
-            this.edittext_socks_addr.setLayoutParams(params);
-            ViewGroup.LayoutParams params1 = this.edittext_socks_port.getLayoutParams();
-            params1.width = dpToPx(220);
-            this.edittext_socks_port.setLayoutParams(params1);
-            ViewGroup.LayoutParams params2 = this.edittext_socks_user.getLayoutParams();
-            params2.width = dpToPx(220);
-            this.edittext_socks_user.setLayoutParams(params2);
-            ViewGroup.LayoutParams params3 = this.edittext_socks_pass.getLayoutParams();
-            params3.width = dpToPx(220);
-            this.edittext_socks_pass.setLayoutParams(params3);
-        } else if (500 > dpi && dpi > 450) {
-            TextView bt = (TextView) findViewById(R.id.bt);
-            bt.setTextSize(TypedValue.COMPLEX_UNIT_PX, 60);
-            ViewGroup.LayoutParams params = this.edittext_socks_addr.getLayoutParams();
-            params.width = dpToPx(200);
-            this.edittext_socks_addr.setLayoutParams(params);
-            ViewGroup.LayoutParams params1 = this.edittext_socks_port.getLayoutParams();
-            params1.width = dpToPx(200);
-            this.edittext_socks_port.setLayoutParams(params1);
-            ViewGroup.LayoutParams params2 = this.edittext_socks_user.getLayoutParams();
-            params2.width = dpToPx(200);
-            this.edittext_socks_user.setLayoutParams(params2);
-            ViewGroup.LayoutParams params3 = this.edittext_socks_pass.getLayoutParams();
-            params3.width = dpToPx(200);
-            this.edittext_socks_pass.setLayoutParams(params3);
-        }
-
-        if (!this.prefs.getguanyu()) {
-            String str1 = "无论在任何情况下，禁止行为:\n　　禁止使用本应用对任何网络数据进行恶意攻击、制作外挂、盗取数据等非法行为;\n　　禁止在未取得其它Host、IP和应用的官方授权的情况下，对其网络数据进行调试和修改;\n　　禁止对本应用本身进行逆向工程（包括但不限于反编译、修改安装包、修改签名信息等），或者以其它方式尝试修改本应用的功能;\n\n免责声明\n　　仅限于【技术交流学习和研究的目的】，请在合法合规的情况下使用，严禁用于一切非法目的，严禁用于一切盈利目的，否则后果自负!\n\n使用及视为同意以上所有,否则请立即删除本软件及所有副本。\n\n　　　　   版权所有 (C) 2024 秦天、久久\n\n　　　　　　　QQ交流群1：751406884\n　　　　　　　QQ交流群2：545120699\n　　　　　　　QQ交流群3：170902713";
-            showAlertDialog(this, "用户协议", str1);
-            this.prefs.setguanyu(true);
-        }
 
         if(this.prefs.getvpn()){
             updateUI();
@@ -196,12 +146,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
-    private int dpToPx(int dp) {
-        float density = getResources().getDisplayMetrics().density;
-        return Math.round((float) dp * density);
-    }
-
 
     public static void showConfirmDialog(Context context) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -251,10 +195,6 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 showAlertDialog(this, "提示", "没有ROOT权限!");
             }
-        } else if (view == this.guanyu) {
-            String str1 = "无论在任何情况下，禁止行为:\n　　禁止使用本应用对任何网络数据进行恶意攻击、制作外挂、盗取数据等非法行为;\n　　禁止在未取得其它Host、IP和应用的官方授权的情况下，对其网络数据进行调试和修改;\n　　禁止对本应用本身进行逆向工程（包括但不限于反编译、修改安装包、修改签名信息等），或者以其它方式尝试修改本应用的功能;\n\n免责声明\n　　仅限于【技术交流学习和研究的目的】，请在合法合规的情况下使用，严禁用于一切非法目的，严禁用于一切盈利目的，否则后果自负!\n\n使用及视为同意以上所有,否则请立即删除本软件及所有副本。\n\n　　　　   版权所有 (C) 2024 秦天、久久\n\n　　　　　　　QQ交流群1：751406884\n　　　　　　　QQ交流群2：545120699\n　　　　　　　QQ交流群3：170902713";
-            showAlertDialog(this, "用户协议", str1);
-            this.prefs.setguanyu(true);
         } else if (view == this.button_apps) {
             startActivity(new Intent(this, AppListActivity.class));
         } else if (view == this.button_save) {
@@ -384,10 +324,10 @@ public class MainActivity extends AppCompatActivity {
             FileOutputStream fos = new FileOutputStream(file);
             fos.write(buffer);
             fos.close();
-            Log.d("久久算法助手", "写入本APP路径成功");
+            Log.d("星智云转发", "写入本APP路径成功");
         } catch (IOException e) {
             e.printStackTrace();
-            Log.d("久久算法助手", "写入本APP路径>" + String.valueOf(e));
+            Log.d("星智云转发", "写入本APP路径>" + String.valueOf(e));
         }
     }
 

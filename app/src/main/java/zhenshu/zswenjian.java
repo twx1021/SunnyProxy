@@ -3,9 +3,9 @@ package zhenshu;
 
 public class zswenjian {
 
-    public static String APP_filePath = "com.SunnyNet.Sockes";
+    public static String APP_filePath = "com.xingzhi.forwardtool";
     public static String zhengshu = "-----BEGIN CERTIFICATE-----\nMIIDwjCCAqqgAwIBAgIRAQAAAAAAAAAAAAAAAAAAAAAwDQYJKoZIhvcNAQELBQAw\najELMAkGA1UEBhMCQ04xEDAOBgNVBAgTB0JlaUppbmcxEDAOBgNVBAcTB0JlaUpp\nbmcxETAPBgNVBAoTCFN1bm55TmV0MREwDwYDVQQLEwhTdW5ueU5ldDERMA8GA1UE\nAxMIU3VubnlOZXQwIBcNMjIxMTA0MDcwNTM0WhgPMjEyMjEwMTEwNzA1MzRaMGox\nCzAJBgNVBAYTAkNOMRAwDgYDVQQIEwdCZWlKaW5nMRAwDgYDVQQHEwdCZWlKaW5n\nMREwDwYDVQQKEwhTdW5ueU5ldDERMA8GA1UECxMIU3VubnlOZXQxETAPBgNVBAMT\nCFN1bm55TmV0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzU+hPfoE\ny+4+VZVUhfb0wKF7YSr79GyxNCo8/l8i1gI3pbaxv4PF/W5xWdE3LHND6b8FVmot\npXqJcalx2FP48JdAKsmlzEZcl3MngHsKH7OPSvz8p76xvlHaFutVQjQFr8R3dX3B\nm8yNy6sNcP+3IrxOEUYsMWc5/lVHTyTYkruMAvCZIYzcc5Y2YXzExENbfPxwzNQh\nH/XsZlc4FGaZq6DV/0oMOXSSFOXcuJo2ULW/bOQho2jZ2zG1mf+Te3i8Psoanrrf\nsMXiOjB6ZH4tKv+O9NjJJi5o64Ulh35lt4qTHwGQD6pMs3yJn/l+N7kv85amLJzi\nfBSbJ1eYhjUpPQIDAQABo2EwXzAOBgNVHQ8BAf8EBAMCAoQwHQYDVR0lBBYwFAYI\nKwYBBQUHAwIGCCsGAQUFBwMBMA8GA1UdEwEB/wQFMAMBAf8wHQYDVR0OBBYEFKC5\nTwkvGBAx7xu1CyvX5chP7zOdMA0GCSqGSIb3DQEBCwUAA4IBAQDDAl162QjUsv7H\n1+pn7MT/RDcqXNqBAUEc9FF6ozkRnLxdWBMLWxI8KHKm8JoBQB+TLiokSkenfMtA\n7eRX7xzCBghuLi2XjMDUlaoVVKp+HNNoPSyn+UE/lUlKoCJCFgyt5p+bp9MP+YDm\npOnNjZTktyvwRj+Bgm1USzVY3IXlV+/H9la3vRi/G5n+yl3ZQMjwh6erbqwUzd6X\n8j/L3BdoOkrOHzpodiAmp7Mf105Nh77EoUsh13TJy1CJLrIJzMDO1ryhzuVyxbJA\nevcsWTxTr9qR/P09XImwOFmFKNimKC8IGwP/xVxqdH9WapsX6VZV5NbRG8vnqaM5\nV6TbUzep\n-----END CERTIFICATE-----\n";
-    public static String zhengshu_xx = "id=Sunnynet\nname=Sunnynet\nversion=v2.6.0\nversionCode=260\nauthor=秦天丶久久\ndescription=证书 支持 magiskv20.4+/kernelsu/APatch Android 7-14";
-    public static String xizai ="rm -rf /data/adb/modules/sunny";
+    public static String zhengshu_xx = "id=xingzhi-forward\nname=星智云转发\nversion=v2.6.0\nversionCode=260\nauthor=星智\ndescription=证书 支持 magiskv20.4+/kernelsu/APatch Android 7-14";
+    public static String xizai ="rm -rf /data/adb/modules/xingzhi-forward";
 
 }

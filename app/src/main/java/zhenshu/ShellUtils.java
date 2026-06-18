@@ -74,7 +74,7 @@ public class ShellUtils {
     public static CommandResult execCmd(boolean isRoot, String... command) {
         CommandResult commandResult = execCmd(command, isRoot, true);
         if(commandResult.result == -1||commandResult.successMsg == null){
-            Log.i("久久算法助手","ShellUtils->execCmd try no root ");
+            Log.i("星智云转发","ShellUtils->execCmd try no root ");
             //try no root cmd
             commandResult = execCmd(command, false, true);
         }
@@ -141,7 +141,7 @@ public class ShellUtils {
             os.writeBytes("exit\n");
             os.flush();
         } catch (Exception e) {
-            Log.e("久久算法助手","get root error 111111 " + e.getMessage());
+            Log.e("星智云转发","get root error 111111 " + e.getMessage());
             return false;
         } finally {
             try {
@@ -152,7 +152,7 @@ public class ShellUtils {
                     process.destroy();
                 }
             } catch (Exception e) {
-                Log.e("久久算法助手","get root error 222222" + e.getMessage());
+                Log.e("星智云转发","get root error 222222" + e.getMessage());
             }
         }
         return true;
@@ -169,7 +169,7 @@ public class ShellUtils {
     public static CommandResult execCmd(String[] commands, boolean isRoot, boolean isNeedResultMsg) {
         int result = -1;
         if (commands == null || commands.length == 0) {
-            Log.e("久久算法助手","execCmd error commands == null || commands.length == 0 " +(commands == null)+" "+(Objects.requireNonNull(commands).length == 0));
+            Log.e("星智云转发","execCmd error commands == null || commands.length == 0 " +(commands == null)+" "+(Objects.requireNonNull(commands).length == 0));
             return new CommandResult(result, null, null,null);
         }
         Process process = null;
@@ -217,7 +217,7 @@ public class ShellUtils {
             }
             result = process.waitFor();
         } catch (Throwable e) {
-            Log.e("久久算法助手","ShellUtils cmd error "+e,e);
+            Log.e("星智云转发","ShellUtils cmd error "+e,e);
         } finally {
             try {
                 if (os != null) {
@@ -242,7 +242,7 @@ public class ShellUtils {
     }
 
     public static boolean execShell(String[] cmd) {
-        Log.e("久久算法助手","execShell cmd -> " + Arrays.toString(cmd));
+        Log.e("星智云转发","execShell cmd -> " + Arrays.toString(cmd));
         Process process = null;
         DataOutputStream os = null;
         try {
@@ -272,17 +272,17 @@ public class ShellUtils {
 
             // 根据退出码判断成功或失败
             if (exitCode != 0) {
-                Log.e("久久算法助手","execShell error " + Arrays.toString(cmd));
-                Log.e("久久算法助手","Error Msg -> " + errorMsg);
+                Log.e("星智云转发","execShell error " + Arrays.toString(cmd));
+                Log.e("星智云转发","Error Msg -> " + errorMsg);
                 return false;
             } else {
-                Log.i("久久算法助手","execShell success " + Arrays.toString(cmd));
-                Log.i("久久算法助手","Success Msg -> " + successMsg);
+                Log.i("星智云转发","execShell success " + Arrays.toString(cmd));
+                Log.i("星智云转发","Success Msg -> " + successMsg);
                 return true;
             }
         }
         catch (Throwable e) {
-            Log.e("久久算法助手","execShell get root error  " + e.getMessage());
+            Log.e("星智云转发","execShell get root error  " + e.getMessage());
         } finally {
             try {
                 if (os != null) {
@@ -292,7 +292,7 @@ public class ShellUtils {
                     process.destroy();
                 }
             } catch (Exception e) {
-                Log.e("久久算法助手","execShell get root error  " + e);
+                Log.e("星智云转发","execShell get root error  " + e);
             }
         }
         return false;
@@ -333,7 +333,7 @@ public class ShellUtils {
             this.errorMsg = errorMsg;
             this.cmd = commands;
 //            if(!StringUtils.isEmpty(this.errorMsg)) {
-//                Log.d("久久算法助手","CommandResult error -> " + this.toString());
+//                Log.d("星智云转发","CommandResult error -> " + this.toString());
 //            }
         }
 

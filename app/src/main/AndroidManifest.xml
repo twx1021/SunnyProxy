@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-sdk android:minSdkVersion="17" android:targetSdkVersion="28" tools:ignore="ExpiredTargetSdkVersion"/>
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-feature android:name="android.hardware.camera" android:required="false"/>
     <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
@@ -29,11 +28,11 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/tt"
+        android:icon="@drawable/xingzhi_cloud_logo"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/tt"
+        android:roundIcon="@drawable/xingzhi_cloud_logo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SunnyNetProxy"
+        android:theme="@style/Theme.XingzhiProxy"
         tools:targetApi="31">
 
         <activity

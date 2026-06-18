@@ -187,8 +187,8 @@ public class TProxyService extends VpnService {
         PendingIntent pi = PendingIntent.getService(this, 0, i, PendingIntent.FLAG_IMMUTABLE);
         NotificationCompat.Builder notification = new NotificationCompat.Builder(this, channelName);
         Notification notify = notification
-                .setContentTitle(getString(R.string.app_name) + "[Service is running]")
-                .setSmallIcon(R.drawable.tt)
+                .setContentTitle(getString(R.string.app_name) + "正在运行")
+                .setSmallIcon(R.drawable.xingzhi_cloud_logo)
                 .setContentIntent(pi)
                 .build();
         startForeground(1, notify);

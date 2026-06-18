@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SunnyNet</string>
+    <string name="app_name">星智云转发</string>
     <string name="title_dashboard">代理配置</string>
     <string name="title_home">证书安装</string>
     <string name="title_notifications">关于</string>
