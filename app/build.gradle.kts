@@ -1,5 +1,14 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
+}
+
+val localProperties = Properties().apply {
+    val localPropertiesFile = rootProject.file("local.properties")
+    if (localPropertiesFile.exists()) {
+        localPropertiesFile.inputStream().use(::load)
+    }
 }
 
 android {
@@ -26,8 +35,19 @@ android {
         }
     }
 
+    signingConfigs {
+        create("release") {
+            val releaseStoreFile = localProperties.getProperty("RELEASE_STORE_FILE").orEmpty()
+            storeFile = if (releaseStoreFile.isNotBlank()) file(releaseStoreFile) else file("missing-release-keystore.jks")
+            storePassword = localProperties.getProperty("RELEASE_STORE_PASSWORD").orEmpty()
+            keyAlias = localProperties.getProperty("RELEASE_KEY_ALIAS").orEmpty()
+            keyPassword = localProperties.getProperty("RELEASE_KEY_PASSWORD").orEmpty()
+        }
+    }
+
     buildTypes {
         release {
+            signingConfig = signingConfigs.getByName("release")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
